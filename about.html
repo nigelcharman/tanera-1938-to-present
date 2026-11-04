@@ -24,23 +24,17 @@
           <ul>
             <li>
               <strong>Basemap</strong> — use the layers control (top-right on the map) to switch
-              between OpenStreetMap and Esri World Imagery.
+              between map view (OpenStreetMap) and satellite view (Esri World Imagery).
             </li>
             <li>
-              <strong>Overlay</strong> — the slider sets opacity of the 1938 Map Warper aerial
+              <strong>Overlay</strong> — the slider sets opacity of the 1938 aerial
               (default 60%). Slide toward 0% to see only the modern basemap; toward 100% for the
               historical image.
             </li>
             <li>
               <strong>Locate</strong> — tap to request location permission, show your position and
               accuracy circle, and follow as you move. Drag the map to pause follow; tap Locate
-              again to recenter. GPS needs
-              <strong>HTTPS</strong> (or localhost) — deploy to Netlify/GitHub Pages for phone use.
-            </li>
-            <li>
-              <strong>In the field</strong> — open the HTTPS site on your phone, allow location when
-              prompted, keep the screen awake while walking, and use a mid opacity (~40–70%) so
-              streets and the 1938 photo stay readable together.
+              again to recenter.
             </li>
           </ul>
         </section>
@@ -58,8 +52,9 @@
             with control points on lasting street corners and roof edges. The warped result is
             served as XYZ tiles and drawn in
             <a href="https://leafletjs.com/" rel="noopener noreferrer" target="_blank">Leaflet</a>
-            over OSM or Esri imagery, with the browser Geolocation API for on-site GPS. Earlier
-            work aligned the same aerial for a then/now comparison video before this live map.
+            over OSM or Esri imagery, with the browser Geolocation API for on-site GPS. The website is
+            stored in a <a href="https://github.com/nigelcharman/tanera-1938-to-present">GitHub repository</a>
+            and deployed to Netlify.
           </p>
         </section>
 
