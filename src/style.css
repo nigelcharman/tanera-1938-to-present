@@ -200,11 +200,20 @@ body {
   white-space: nowrap;
 }
 
-/* About page */
+/* About page — document scroll (map page keeps html/body overflow:hidden) */
+html:has(body.about-page) {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 body.about-page {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   min-height: 100dvh;
   height: auto;
+  -webkit-overflow-scrolling: touch;
   background:
     radial-gradient(ellipse 80% 50% at 10% -10%, rgba(196, 163, 90, 0.18), transparent 55%),
     linear-gradient(165deg, #101a12 0%, #1a2a1c 45%, #142018 100%);
@@ -213,7 +222,7 @@ body.about-page {
 .about-shell {
   max-width: 40rem;
   margin: 0 auto;
-  padding: calc(1rem + var(--safe-top)) 1.1rem calc(2rem + var(--safe-bottom));
+  padding: calc(1rem + var(--safe-top)) 1.1rem calc(4.5rem + var(--safe-bottom));
 }
 
 .about-header {
