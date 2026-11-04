@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#1a2e1a" />
+    <title>About — Tanera Park 1938 Field Map</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="about-page">
+    <div class="about-shell">
+      <header class="about-header">
+        <a class="back-link" href="/">← Map</a>
+        <h1>About</h1>
+        <p class="lede">Tanera Park field map — 1938 aerial over today’s basemap</p>
+      </header>
+
+      <main class="about-main">
+        <section>
+          <h2>How to use</h2>
+          <ul>
+            <li>
+              <strong>Basemap</strong> — use the layers control (top-right on the map) to switch
+              between OpenStreetMap and Esri World Imagery.
+            </li>
+            <li>
+              <strong>Overlay</strong> — the slider sets opacity of the 1938 Map Warper aerial
+              (default 60%). Slide toward 0% to see only the modern basemap; toward 100% for the
+              historical image.
+            </li>
+            <li>
+              <strong>Locate</strong> — tap to request location permission, show your position and
+              accuracy circle, and follow as you move. Drag the map to pause follow; tap Locate
+              again to recenter. GPS needs
+              <strong>HTTPS</strong> (or localhost) — deploy to Netlify/GitHub Pages for phone use.
+            </li>
+            <li>
+              <strong>In the field</strong> — open the HTTPS site on your phone, allow location when
+              prompted, keep the screen awake while walking, and use a mid opacity (~40–70%) so
+              streets and the 1938 photo stay readable together.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>How we built it</h2>
+          <p>
+            A 1938 Retrolens aerial of the Tanera Park / Brooklyn area was rectified in
+            <a
+              href="https://mapwarper.net/maps/114001"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Map Warper (map 114001)</a
+            >
+            with control points on lasting street corners and roof edges. The warped result is
+            served as XYZ tiles and drawn in
+            <a href="https://leafletjs.com/" rel="noopener noreferrer" target="_blank">Leaflet</a>
+            over OSM or Esri imagery, with the browser Geolocation API for on-site GPS. Earlier
+            work aligned the same aerial for a then/now comparison video before this live map.
+          </p>
+        </section>
+
+        <section>
+          <h2>Licensing / copyright</h2>
+          <ul class="license-list">
+            <li>
+              1938 photo (cc) sourced from
+              <a href="http://retrolens.nz" rel="noopener noreferrer" target="_blank"
+                >http://retrolens.nz</a
+              >
+              and licensed by LINZ
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                rel="noopener noreferrer"
+                target="_blank"
+                >CC BY-3.0</a
+              >
+            </li>
+            <li>
+              colour image / modern imagery: Eagle Technology, LINZ (when comparing to recent
+              aerials). In this app the live basemaps are
+              <a
+                href="https://www.openstreetmap.org/copyright"
+                rel="noopener noreferrer"
+                target="_blank"
+                >© OpenStreetMap</a
+              >
+              contributors and Esri World Imagery (Esri, Maxar, Earthstar Geographics, and the GIS
+              User Community).
+            </li>
+            <li>
+              Rectification / tiles:
+              <a
+                href="https://mapwarper.net/maps/114001"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Map Warper</a
+              >; map library:
+              <a href="https://leafletjs.com/" rel="noopener noreferrer" target="_blank"
+                >Leaflet</a
+              >
+              (BSD-2-Clause).
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="about-footer">
+        <a href="/">Back to map</a>
+      </footer>
+    </div>
+    <script type="module" src="/src/about.js"></script>
+  </body>
+</html>

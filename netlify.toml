@@ -2,7 +2,13 @@
   command = "npm run build"
   publish = "dist"
 
-# Vite SPA: serve index.html for unknown paths
+# Pretty /about URL → multi-page about.html (before SPA fallback)
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+# Vite SPA fallback for the map app
 [[redirects]]
   from = "/*"
   to = "/index.html"

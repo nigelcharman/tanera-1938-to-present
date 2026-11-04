@@ -43,6 +43,7 @@ Local LAN HTTP (`http://192.168.x.x:4321`) will show the map but **GPS will be b
 - Basemap toggle: OpenStreetMap / Esri World Imagery
 - 1938 Map Warper overlay with opacity slider (default 60%)
 - Locate: requests permission on tap, shows position + accuracy circle, follow/recenter
+- About page (`/about`): how to use, how it was built, licensing
 - Attribution: Retrolens/LINZ CC BY-3.0, Map Warper, OSM / Esri
 
 ## Tiles
