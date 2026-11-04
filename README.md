@@ -47,8 +47,12 @@ Local LAN HTTP (`http://192.168.x.x:4321`) will show the map but **GPS will be b
 
 ## Tiles
 
+Path (unchanged):
+
 ```
 https://mapwarper.net/maps/tile/114001/{z}/{x}/{y}.png
 ```
 
-Leaflet loads tiles as images (no CORS required for display). A one-shot `fetch` probe may fail CORS while the overlay still renders.
+The app appends `?v=<WARPER_TILE_VERSION>` so browsers drop stale tiles after a re-warp. After warping again on Map Warper, bump `WARPER_TILE_VERSION` in `src/main.js` to the map’s `updated_at` (see https://mapwarper.net/api/v1/maps/114001.json).
+
+Leaflet loads tiles as images (no CORS required for display).

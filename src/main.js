@@ -4,7 +4,12 @@ import "./style.css";
 
 const TANERA = [-41.3, 174.762];
 const DEFAULT_ZOOM = 16;
-const WARPER_TILES = "https://mapwarper.net/maps/tile/114001/{z}/{x}/{y}.png";
+const WARPER_MAP_ID = 114001;
+// Bump after each Map Warper re-warp (from API attributes.updated_at).
+// Path stays /maps/tile/114001/{z}/{x}/{y}.png — ?v= only busts browser caches.
+const WARPER_TILE_VERSION = "20261104T005613Z";
+const warperTileUrl = (version) =>
+  `https://mapwarper.net/maps/tile/${WARPER_MAP_ID}/{z}/{x}/{y}.png?v=${version}`;
 
 const map = L.map("map", {
   center: TANERA,
@@ -28,7 +33,7 @@ const esri = L.tileLayer(
   },
 );
 
-const historical = L.tileLayer(WARPER_TILES, {
+const historical = L.tileLayer(warperTileUrl(WARPER_TILE_VERSION), {
   maxZoom: 20,
   opacity: 0.6,
   attribution:
@@ -238,7 +243,8 @@ const probeY = Math.floor(
     2) *
     2 ** probeZ,
 );
-const probeUrl = WARPER_TILES.replace("{z}", String(probeZ))
+const probeUrl = warperTileUrl(WARPER_TILE_VERSION)
+  .replace("{z}", String(probeZ))
   .replace("{x}", String(probeX))
   .replace("{y}", String(probeY));
 
