@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#1a2e1a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Tanera Park — 1938 Field Map</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="toolbar" role="banner">
+        <div class="brand">
+          <h1>Tanera Park</h1>
+          <p class="subtitle">1938 aerial overlay</p>
+        </div>
+        <div class="controls">
+          <label class="opacity-control" for="opacity">
+            <span>Overlay</span>
+            <input
+              id="opacity"
+              type="range"
+              min="0"
+              max="100"
+              value="60"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="60"
+              aria-label="Historical overlay opacity"
+            />
+            <span id="opacity-value" class="opacity-value">60%</span>
+          </label>
+          <button
+            id="locate-btn"
+            type="button"
+            class="btn locate-btn"
+            aria-pressed="false"
+            title="Show my location and follow"
+          >
+            Locate
+          </button>
+        </div>
+      </header>
+      <main id="map" role="application" aria-label="Tanera Park field map"></main>
+      <footer class="attribution" role="contentinfo">
+        <p>
+          1938 photo ©
+          <a href="https://retrolens.nz/" rel="noopener noreferrer" target="_blank"
+            >Retrolens</a
+          >/LINZ
+          <a
+            href="https://creativecommons.org/licenses/by/3.0/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >CC BY-3.0</a
+          >;
+          warped via
+          <a
+            href="https://mapwarper.net/maps/114001"
+            rel="noopener noreferrer"
+            target="_blank"
+            >Map Warper</a
+          >.
+          Basemap ©
+          <a href="https://www.openstreetmap.org/copyright" rel="noopener noreferrer" target="_blank"
+            >OpenStreetMap</a
+          >
+          / Esri World Imagery.
+        </p>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
